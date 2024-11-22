@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gym Tracker</h1>
+        
+        <div id="authButtons">
+            <button class="btn btn-primary" onclick="showModal('loginModal')">Login</button>
+            <button class="btn btn-primary" onclick="showModal('registerModal')">Register</button>
+        </div>
+
+        <div id="mainContent" style="display: none;">
+            <div class="header">
+                <span id="welcomeMessage"></span>
+                <button class="btn btn-danger" onclick="handleLogout()">Logout</button>
+            </div>
+
+            <div class="stats">
+                <div>
+                    <h3>Total Workouts</h3>
+                    <p id="totalWorkouts">0</p>
+                </div>
+                <div>
+                    <h3>Most Common Exercise</h3>
+                    <p id="commonExercise">-</p>
+                </div>
+                <div>
+                    <h3>Heaviest Weight</h3>
+                    <p id="heaviestWeight">0 kg</p>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="showModal('workoutModal')">Add Workout</button>
+            
+            <div id="workoutList" class="workout-list">
+            </div>
+        </div>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('loginModal')">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('registerModal')">&times;</span>
+                <h2>Register</h2>
+                <form id="registerForm" onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="regUsername">Username</label>
+                        <input type="text" id="regUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="workoutModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('workoutModal')">&times;</span>
+                <h2>Add Workout</h2>
+                <form id="workoutForm" onsubmit="handleAddWorkout(event)">
+                    <div class="form-group">
+                        <label for="workoutDate">Date</label>
+                        <input type="date" id="workoutDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exercise">Exercise</label>
+                        <input type="text" id="exercise" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sets">Sets</label>
+                        <input type="number" id="sets" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reps">Reps</label>
+                        <input type="number" id="reps" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Workout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="editWorkoutModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('editWorkoutModal')">&times;</span>
+                <h2>Edit Workout</h2>
+                <form id="editWorkoutForm" onsubmit="handleEditWorkout(event)">
+                    <input type="hidden" id="editWorkoutId">
+                    <div class="form-group">
+                        <label for="editWorkoutDate">Date</label>
+                        <input type="date" id="editWorkoutDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editExercise">Exercise</label>
+                        <input type="text" id="editExercise" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editSets">Sets</label>
+                        <input type="number" id="editSets" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editReps">Reps</label>
+                        <input type="number" id="editReps" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editWeight">Weight (kg)</label>
+                        <input type="number" id="editWeight" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
