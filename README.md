@@ -5,10 +5,10 @@ Gym Tracker to prosta usługa webowa RESTful, która umożliwia użytkownikom za
 ## Funkcje 🖱️
 
 - **Autoryzacja użytkowników**: Funkcjonalności rejestracji, logowania i wylogowywania.
+- **Implementacja CRUD oraz programowania obiektowego**
 - **Zarządzanie treningami**: Dodawanie nowych treningów, edycja, pobieranie historii treningów oraz usuwanie treningów.
 - **Autoryzacja oparta na sesji**: Sesje użytkowników są zarządzane, aby uwierzytelnić żądania i zapewnić bezpieczny dostęp do danych.
 - **Bezpieczne zarządzanie konfiguracją**: Zmienna konfiguracja (np. dane logowania do bazy danych) jest teraz przechowywana w pliku `.env` z wykorzystaniem biblioteki [PHP dotenv](https://github.com/vlucas/phpdotenv), co zapewnia lepszą ochronę danych wrażliwych.
-- **Implementacja CRUD oraz programowania obiektowego**
 - **Obsługa Composer**: Zastosowanie narzędzia Composer do zarządzania zależnościami PHP, w tym instalacja i zarządzanie bibliotekami takimi jak PHP dotenv.
 ## Wymagania 📋
 
