@@ -1,6 +1,6 @@
 # Gym Tracker 🏋️‍♂️
 
-Gym Tracker to prosta usługa webowa RESTful, która umożliwia użytkownikom zarządzanie danymi treningowymi. Użytkownicy mogą rejestrować się, logować, dodawać, pobierać i usuwać wyniki treningowe.
+Gym Tracker to prosta usługa webowa RESTful, która umożliwia użytkownikom zarządzanie danymi treningowymi. Użytkownicy mogą rejestrować się, logować, dodawać, edytować i usuwać wyniki treningowe.
 
 ## Funkcje 🖱️
 
